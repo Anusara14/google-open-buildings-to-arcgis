@@ -1,12 +1,6 @@
 # Google Open Buildings CSV to ArcGIS Pro Importer
 
-A simple Python script to efficiently process the massive Google Open Buildings CSV files (which use WKT geometry) and convert them into a Polygon Feature Class inside an ArcGIS Pro File Geodatabase (GDB).
-
-## ⚠️ The Problem
-
-The Google Open Buildings dataset is distributed as massive, multi-gigabyte CSV files. Trying to import these directly into ArcGIS Pro or QGIS often fails, lags, or crashes ("Not Responding"). This is because these programs try to load the entire file into memory at once.
-
-## 🚀 The Solution
+A simple Python script to efficiently process the massive Google Open Buildings CSV files (which use WKT geometry) and convert them into a Polygon Feature Class inside an ArcGIS Pro File Geodatabase (GDB). The Google Open Buildings dataset is distributed as massive, multi-gigabyte CSV files. Trying to import these directly into ArcGIS Pro or QGIS often fails, lags, or crashes ("Not Responding"). This is because these programs try to load the entire file into memory at once.
 
 This script (`process_gob.py`) uses `arcpy` and the `csv` library to read the CSV file **one row at a time**. It converts the WKT (Well-Known Text) string from each row into a polygon geometry and immediately inserts it into the geodatabase.
 
